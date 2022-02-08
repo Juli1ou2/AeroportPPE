@@ -1,7 +1,8 @@
 <?php	
 		function connexion ()
 	{
-		$con = mysqli_connect("localhost:8889", "root", "root", "airfrance");
+		$con = mysqli_connect("localhost", "root", "", "airfrance"); //Config pour WINDOWS !
+		//$con = mysqli_connect("localhost:8889", "root", "root", "airfrance"); //Config pour MACOS !
 		if ($con == null){
 			echo "Erreur de connexion à la bdd";
 		}
