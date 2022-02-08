@@ -8,8 +8,9 @@ create table pilote (
 	nom varchar(50) not null,
 	prenom varchar(50) not null,
 	age int (2) not null,
-	email varchar(50) not null
+	email varchar(50) not null,
 	grade varchar(50) not null,
+	mdp varchar (50) not null,
 	primary key (idpilote)
 	);
 

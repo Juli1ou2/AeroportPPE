@@ -2,21 +2,21 @@
 <form method="post" action="">
 	<table border="0">
 		<tr>
-			<td> Nom Pilote :</td>
+			<td> Nom :</td>
 			<td>
 				<input type="text" name="nom" 
 				value="<?php if($lePilote != null)  echo $lePilote['nom'] ; ?>">
 			</td>
 		</tr>
 		<tr>
-			<td> Prenom Pilote :</td>
+			<td> Prenom :</td>
 			<td>
 				<input type="text" name="prenom" 	value="<?php if($lePilote != null)  echo $lePilote['prenom'] ; ?>">
 
 			</td>
 		</tr>
 		<tr>
-			<td> Age Pilote :</td>
+			<td> Age :</td>
 			<td>
 				<input type="text" name="age"
 				value="<?php if($lePilote != null)  echo $lePilote['age'] ; ?>">
@@ -24,7 +24,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td> Email Pilote :</td>
+			<td> Email :</td>
 			<td>
 				<input type="text" name="email"
 				value="<?php if($lePilote != null)  echo $lePilote['email'] ; ?>">
@@ -32,7 +32,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td> Grade Pilote :</td>
+			<td> Grade :</td>
 			<td>
 				<input type="text" name="grade"
 				value="<?php if($lePilote != null)  echo $lePilote['grade'] ; ?>">
@@ -40,7 +40,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td> Mot de passe pilote :</td>
+			<td> Mot de passe :</td>
 			<td>
 				<input type="password" name="mdp">
 			</td>
