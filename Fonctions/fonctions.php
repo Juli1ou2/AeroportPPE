@@ -1,8 +1,8 @@
 <?php	
 		function connexion ()
 	{
-		$con = mysqli_connect("localhost", "root", "", "airfrance"); //Config pour WINDOWS !
-		//$con = mysqli_connect("localhost:8889", "root", "root", "airfrance"); //Config pour MACOS !
+		//$con = mysqli_connect("localhost", "root", "", "airfrance"); //Config pour WINDOWS !
+		$con = mysqli_connect("localhost:8889", "root", "root", "airfrance"); //Config pour MACOS !
 		if ($con == null){
 			echo "Erreur de connexion à la bdd";
 		}
@@ -115,13 +115,88 @@
 		return $nb["nb"];
 	}
 
+	/***************** Fonction Avion ****************/
+
+	function selectAllAvions()
+	{
+		$requete = "select * from avion ;";
+		$con = connexion();
+		if ($con)
+		{
+		$lesAvions = mysqli_query($con, $requete);
+		//var_dump($lesPilotes);
+		} else {
+			return null;
+		}
+		deconnexion($con);
+		return $lesAvions;
+	}
+
+	function insertAvion($tab)
+	{
+		$requete = "insert into avion values(null,'".$tab['modele']."','".$tab['etat']."','".$tab['nbPlaces']."','".$tab['type']."');";
+		$con = connexion ();
+		if ($con) 
+		{
+			mysqli_query($con, $requete);
+		}
+		deconnexion($con);
+	}
+
+	function deleteAvion($idAvion){
+    $requete = "delete from avion where idAvion = ".$idAvion;
+    $con = connexion();
+    if ($con){
+        mysqli_query($con, $requete);
+    }
+    deconnexion($con);
+    }
+
+       function selectWhereAvion($idAvion)
+    {
+
+    	$requete = "select * from avion where idAvion=".$idAvion 
+    	;
+		$con = connexion();
+		if ($con)
+		{
+		$lesAvions = mysqli_query($con, $requete);
+		$unAvion = mysqli_fetch_assoc($lesAvions); //recuperer un client sous forme de tableau associatif.
+		//var_dump($lesPilotes);
+		} else {
+
+			return null;
+		}
+		deconnexion($con);
+		return $unAvion;
+    }
 
 
+       function updateAvion($tab)
+	{
+		$requete = "update avion set modele ='".$tab['modele']."', etat ='".$tab['etat']."', nbPlaces ='".$tab['nbPlaces']."', type ='".$tab['type']."'where idAvion = ".$tab['idAvion']; 
+		$con = connexion ();
+		if ($con) 
+		{
+			mysqli_query($con, $requete);
+		}
+		deconnexion($con);
+	}
 
-
-
-
-
+	function searchAvions($mot)
+	{
+		$requete = "select * from avion where modele like'%".$mot."%' or etat like '%".$mot."%' or nbPlaces like '%".$mot."%' or type like '%".$mot."%';";
+		$con = connexion();
+		if ($con)
+		{
+		$lesAvions = mysqli_query($con, $requete);
+		//var_dump($lesPilotes);
+		} else {
+			return null;
+		}
+		deconnexion($con);
+		return $lesAvions;
+	}
 
 
 
