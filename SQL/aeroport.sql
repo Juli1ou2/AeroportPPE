@@ -19,7 +19,7 @@ create table avion(
 	modele varchar(50) not null,
 	etat varchar(50) not null,
 	nbPlaces int(3) not null,
-	type varchar(50) not null,
+	type varchar(50) not null, --types d'avions: ultra légers, avions légers, avions d'affaires, avions de lignes
 	primary key (idavion)
 	);
 
