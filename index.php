@@ -10,6 +10,7 @@
 		<title>Pilotes AirFrance</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="css/airfrance.css">
+		<link rel="icon" href="images/favicon.ico" />
 	</head>
 
 	<body>
