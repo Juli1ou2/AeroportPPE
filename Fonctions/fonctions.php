@@ -1,8 +1,8 @@
 <?php	
 		function connexion ()
 	{
-		//$con = mysqli_connect("localhost", "root", "", "airfrance"); //Config pour WINDOWS !
-		$con = mysqli_connect("localhost:8889", "root", "root", "airfrance"); //Config pour MACOS !
+		$con = mysqli_connect("localhost", "root", "", "airfrance"); //Config pour WINDOWS !
+		//$con = mysqli_connect("localhost:8889", "root", "root", "airfrance"); //Config pour MACOS !
 		if ($con == null){
 			echo "Erreur de connexion à la bdd";
 		}
@@ -62,7 +62,7 @@
 		if ($con)
 		{
 		$lesPilotes = mysqli_query($con, $requete);
-		$unPilote = mysqli_fetch_assoc($lesPilotes); //recuperer un client sous forme de tableau associatif.
+		$unPilote = mysqli_fetch_assoc($lesPilotes); //recuperer un pilote sous forme de tableau associatif.
 		//var_dump($lesPilotes);
 		} else {
 
@@ -124,7 +124,6 @@
 		if ($con)
 		{
 		$lesAvions = mysqli_query($con, $requete);
-		//var_dump($lesPilotes);
 		} else {
 			return null;
 		}
@@ -161,7 +160,7 @@
 		if ($con)
 		{
 		$lesAvions = mysqli_query($con, $requete);
-		$unAvion = mysqli_fetch_assoc($lesAvions); //recuperer un client sous forme de tableau associatif.
+		$unAvion = mysqli_fetch_assoc($lesAvions); //recuperer un avion sous forme de tableau associatif.
 		//var_dump($lesPilotes);
 		} else {
 
@@ -196,6 +195,94 @@
 		}
 		deconnexion($con);
 		return $lesAvions;
+	}
+
+
+	/***************** Fonction Vol ****************/
+
+	function selectAllVols()
+	{
+		$requete = "select * from vol ;";
+		$con = connexion();
+		if ($con){
+			$lesVols = mysqli_query($con, $requete);
+		} else {
+			return null;
+		}
+		deconnexion($con);
+		return $lesVols;
+	}
+
+	function insertVol($tab)
+	{
+		$requete = "insert into vol values(null,'".$tab['designationVol']."','".$tab['dateVol']."','".$tab['heureDepart']."','".$tab['heureArrivee']."','".$tab['dureeVol']."','".$tab['idAvion']."','".$tab['idAeroport1']."','".$tab['idAeroport2']."','".$tab['idPilote1']."','".$tab['idPilote2']."');";
+		$con = connexion ();
+		if ($con){
+			mysqli_query($con, $requete);
+		}
+		deconnexion($con);
+	}
+
+
+	function deleteVol($idVol){
+    $requete = "delete from vol where idVol = ".$idVol;
+    $con = connexion();
+    if ($con){
+        mysqli_query($con, $requete);
+    }
+    deconnexion($con);
+    }
+
+   function selectWhereVol($idVol){
+    	$requete = "select * from vol where idVol=".$idVol ;
+		$con = connexion();
+		if ($con){
+			$lesVols = mysqli_query($con, $requete);
+			$unVol = mysqli_fetch_assoc($lesVols); //recuperer un vol sous forme de tableau associatif.
+		} else {
+			return null;
+		}
+		deconnexion($con);
+		return $unVol;
+    }
+
+
+       function updateVol($tab)
+	{
+		$requete = "update vol set nom ='".$tab['nom']."', prenom ='".$tab['prenom']."', age ='".$tab['age']."', email ='".$tab['email']."', grade = '".$tab['grade']."' , mdp ='".$tab['mdp']."'where idPilote = ".$tab['idPilote']; 
+		$con = connexion ();
+		if ($con){
+			mysqli_query($con, $requete);
+		}
+		deconnexion($con);
+	}
+
+	function searchVols($mot)
+	{
+		$requete = "select * from vol where nom like'%".$mot."%' or prenom like '%".$mot."%' or age like '%".$mot."%' or email like '%".$mot."%' or grade like '%".$mot."%';";
+		$con = connexion();
+		if ($con){
+			$lesVols = mysqli_query($con, $requete);
+		} else {
+			return null;
+		}
+		deconnexion($con);
+		return $lesVols;
+	}
+
+
+	function countVols ()
+	{
+		$requete = "select count(*) as nb from vol ;";
+		$con = connexion();
+		if ($con){
+			$resultat = mysqli_query($con, $requete);
+			$nb = mysqli_fetch_assoc($resultat);
+		} else {
+			return null;
+		}
+		deconnexion($con);
+		return $nb["nb"];
 	}
 
 
