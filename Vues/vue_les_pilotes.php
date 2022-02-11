@@ -1,5 +1,3 @@
-
-
 <h4>Liste des pilotes</h4>
 <form method="post" action="">
 	Mot de recherche :

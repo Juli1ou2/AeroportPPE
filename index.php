@@ -7,7 +7,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>Pilotes AirFrance</title>
 		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/airfrance.css">
 	</head>
 
 	<body>
