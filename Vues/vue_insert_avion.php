@@ -2,7 +2,7 @@
 <form method="post" action="">
 	<table border="0">
 		<tr>
-			<td> Modele d'avion :</td>
+			<td> Modèle d'avion :</td>
 			<td>
 				<input type="text" name="modele" 
 				value="<?php if($leAvion != null)  echo $leAvion['modele'] ; ?>">

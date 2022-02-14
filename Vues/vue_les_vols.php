@@ -6,7 +6,7 @@
 </form>
 <br/>
 
-	<table class="table">
+	<table id="table_affichage">
 		<thead>
 			<tr>
 				<th>ID Vol</th>

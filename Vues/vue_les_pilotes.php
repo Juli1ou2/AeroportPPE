@@ -6,13 +6,12 @@
 </form>
 <br/>
 
-	<div class="table-responsive">
-	<table class="table">
-		<thead class="bg-dark text-light">
+	<table id="table_affichage">
+		<thead>
 			<tr>
-				<th>Id Pilote</th>
-				<th>Nom Pilote</th>
-				<th>Prenom Pilote</th>
+				<th>ID Pilote</th>
+				<th>Nom</th>
+				<th>Prenom</th>
 				<th>Age</th>
 				<th>Email</th>
 				<th>Grade</th>
