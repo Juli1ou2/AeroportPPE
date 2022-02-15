@@ -285,6 +285,86 @@
 		return $nb["nb"];
 	}
 
+	/***************** Fonction Aeroport ****************/
+
+	function selectAllAeroports()
+	{
+		$requete = "select * from aeroport ;";
+		$con = connexion();
+		if ($con)
+		{
+		$lesAeroports = mysqli_query($con, $requete);
+		} else {
+			return null;
+		}
+		deconnexion($con);
+		return $lesAeroports;
+	}
+
+	function insertAeroport($tab)
+	{
+		$requete = "insert into aeroport values(null,'".$tab['designationAeroport']."','".$tab['adresse']."','".$tab['statut']."');";
+		$con = connexion ();
+		if ($con) 
+		{
+			mysqli_query($con, $requete);
+		}
+		deconnexion($con);
+	}
+
+	function deleteAeroport($idAeroport){
+    $requete = "delete from aeroport where idAeroport = ".$idAeroport;
+    $con = connexion();
+    if ($con){
+        mysqli_query($con, $requete);
+    }
+    deconnexion($con);
+    }
+
+       function selectWhereAeroport($idAeroport)
+    {
+
+    	$requete = "select * from aeroport where idAeroprot=".$idAeroport
+    	;
+		$con = connexion();
+		if ($con)
+		{
+		$lesAeroports = mysqli_query($con, $requete);
+		$unAeroport = mysqli_fetch_assoc($lesAeroports); 
+		} else {
+
+			return null;
+		}
+		deconnexion($con);
+		return $unAeroport;
+    }
+
+
+       function updateAeroport($tab)
+	{
+		$requete = "update aeroport set designationAeroport ='".$tab['designationAeroport']."', adresse ='".$tab['adresse']."', statut ='".$tab['statut']; 
+		$con = connexion ();
+		if ($con) 
+		{
+			mysqli_query($con, $requete);
+		}
+		deconnexion($con);
+	}
+
+	function searchAeroport($mot)
+	{
+		$requete = "select * from aeroport where designationAeroport like'%".$mot."%' or adresse like '%".$mot."%' or statut like '%".$mot."%';";
+		$con = connexion();
+		if ($con)
+		{
+		$lesAeroports = mysqli_query($con, $requete);
+		} else {
+			return null;
+		}
+		deconnexion($con);
+		return $lesAeroports;
+	}
+
 
 
 
