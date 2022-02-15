@@ -29,7 +29,7 @@
 							$mdp = $_POST['mdp'];
 							$unUser = selectUser($email, $mdp);
 							if($unUser == null){
-								echo "Veuillez vérifier vos identifiants !";
+								echo "<br/>Veuillez vérifier vos identifiants !";
 							} else{
 								echo "Bienvenue ".$unUser['prenom']." ".$unUser['nom'];
 								//Création de la session user
@@ -68,6 +68,7 @@
 							<img src="images/deconnexion.png" height="60" width="60" title="Se déconnecter">
 						</a>
 					</div>  ';
+						}
 
 					?>
 
