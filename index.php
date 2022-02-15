@@ -18,6 +18,34 @@
 			<header>
 				<div id="en-tete">		
 					<h1>Gestion Pilotes AirFrance</h1>
+
+					<?php
+						if (! isset($_SESSION['email'])){ //si il n'y a pas de session
+							require_once("vues/vue_connexion.php");
+						}
+
+						if (isset($_POST['SeConnecter'])){
+							$email = $_POST['email'];
+							$mdp = $_POST['mdp'];
+							$unUser = selectUser($email, $mdp);
+							if($unUser == null){
+								echo "Veuillez vérifier vos identifiants !";
+							} else{
+								echo "Bienvenue ".$unUser['prenom']." ".$unUser['nom'];
+								//Création de la session user
+								$_SESSION['email'] = $unUser['email'];
+								$_SESSION['nom'] = $unUser['nom'];
+								$_SESSION['prenom'] = $unUser['prenom'];
+								$_SESSION['role'] = $unUser['role'];
+								//on recharge la page vers le HOME
+								header("Location: index.php?page=0");
+							}
+						}
+
+						if (isset($_SESSION['email'])){
+
+							echo '
+								
 						
 					<div id="menu">			
 						<a href="index.php?page=0">
@@ -39,31 +67,38 @@
 						<a href="index.php?page=5">
 							<img src="images/deconnexion.png" height="60" width="60" title="Se déconnecter">
 						</a>
-					</div>
+					</div>  ';
+
+					?>
+
 				</div>
 			</header>
 
-					    <?php
-					    	if(isset($_GET["page"])){
-					    		$page = $_GET['page'];
-					    	}else{
-					    		$page=0 ;
-					    	}
-					    	switch ($page) {
-					    		case 0 : require_once('home.php');
-					    			break;
-					    		case 1 : require_once("g_pilote.php");
-					    			break;
-					    		case 2: require_once("g_avion.php");
-					    			break;
-					    		case 3 : require_once("g_aeroport.php");
-					    			break;
-					    		case 4 : require_once("g_vol.php");
-					    			break;
-					                case 5 :
-					            break;
-					    	}
-					 	?>
+			<?php    
+		    	if(isset($_GET["page"])){
+		    		$page = $_GET['page'];
+		    	}else{
+		    		$page=0 ;
+		    	}
+
+		    	switch ($page) {
+		    		case 0 : require_once('home.php');
+		    			break;
+		    		case 1 : require_once("g_pilote.php");
+		    			break;
+		    		case 2: require_once("g_avion.php");
+		    			break;
+		    		case 3 : require_once("g_aeroport.php");
+		    			break;
+		    		case 4 : require_once("g_vol.php");
+		    			break;
+		            case 5 :
+		                //suppression de la session
+						session_destroy();
+						header("Location: index.php"); //recharger la page
+						break;
+		    	}
+		 	?>
 
 			<br/><br/><br/>
 			<footer>
