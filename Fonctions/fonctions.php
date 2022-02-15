@@ -197,6 +197,19 @@
 		return $lesAvions;
 	}
 
+	function countAvions(){
+		$requete = "select count(*) as nb from avion ;";
+		$con = connexion();
+		if ($con){
+			$resultat = mysqli_query($con, $requete);
+			$nb = mysqli_fetch_assoc($resultat);
+		} else {
+			return null;
+		}
+		deconnexion($con);
+		return $nb["nb"];
+	}
+
 
 	/***************** Fonction Vol ****************/
 
@@ -366,8 +379,20 @@
 	}
 
 
+/***************** Fonction User ****************/
 
-
+function selectUser($email, $mdp){
+		$requete = "select * from user where email ='".$email."' and mdp ='".$mdp."'; " ;
+		$con = connexion();
+		if ($con){
+			$resultat = mysqli_query($con, $requete);
+			$unUser = mysqli_fetch_assoc($resultat); //récupérer une intervention sous forme de tableau associatif
+		} else {
+			return null;
+		}
+		deconnexion($con);
+		return $unUser;
+	}
 
 
 

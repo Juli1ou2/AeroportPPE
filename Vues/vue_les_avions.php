@@ -29,20 +29,20 @@
 		echo "<td>".$unAvion['etat']. "</td>";
 		echo "<td>".$unAvion['nbPlaces']. "</td>";
 		echo "<td>".$unAvion['type']. "</td>";
-		echo "<td>";
+		echo "<td><center>";
 
 
 	
 		echo "<a href='index.php?page=2&action=sup&idAvion=".$unAvion['idAvion']."'>";
-		echo "<img src='images/supprimer.jpeg' height='30' width='30'>";
+		echo "<img src='images/supprimer.png' height='30' width='30'>";
 		echo "</a>";
 		echo "<a href='index.php?page=2&action=edit&idAvion=".$unAvion['idAvion']."'>";
-		echo "<img src='images/edit.jpeg' height='30' width='30'>";
+		echo "<img src='images/edit.png' height='30' width='30'>";
 		echo "</a>";
 
 
 
-		echo "</td>";
+		echo "</center></td>";
 		echo "</tr>";
 	}
 

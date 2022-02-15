@@ -29,20 +29,20 @@
 		echo "<td>".$unPilote['age']. "</td>";
 		echo "<td>".$unPilote['email']. "</td>";
 		echo "<td>".$unPilote['grade']. "</td>";
-		echo "<td>";
+		echo "<td><center>";
 
 
 	
 		echo "<a href='index.php?page=1&action=sup&idPilote=".$unPilote['idPilote']."'>";
-		echo "<img src='images/supprimer.jpeg' height='30' width='30'>";
+		echo "<img src='images/supprimer.png' height='30' width='30'>";
 		echo "</a>";
 		echo "<a href='index.php?page=1&action=edit&idPilote=".$unPilote['idPilote']."'>";
-		echo "<img src='images/edit.jpeg' height='30' width='30'>";
+		echo "<img src='images/edit.png' height='30' width='30'>";
 		echo "</a>";
 
 
 
-		echo "</td>";
+		echo "</center></td>";
 		echo "</tr>";
 	}
 

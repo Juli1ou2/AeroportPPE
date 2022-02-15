@@ -47,7 +47,7 @@
 				?>
 			</select></td>
 		</tr>
-		<!-- <tr>
+		<tr>
 			<td>ID Aéroport Aller :</td>
 			<td><select name="idclient" value="<?php if($leVehicule!=null) echo $leVehicule['idclient'];?>">
 				<?php
@@ -70,7 +70,7 @@
 					}
 				?>
 			</select></td>
-		</tr> -->
+		</tr>
 		<tr>
 			<td>ID Pilote Aller :</td>
 			<td><select name="idPilote1" value="<?php if($leVol!=null) echo $leVol['idPilote1'];?>">
