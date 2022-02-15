@@ -21,18 +21,18 @@
 	<?php
 	foreach ($lesAeroports as $unAeroport ) {
 		echo "<tr>";
-		echo "<td>".$unAvion['idAeroport']. "</td>";
-		echo "<td>".$unAvion['designationAeroport']. "</td>";
-		echo "<td>".$unAvion['adresse']. "</td>";
-		echo "<td>".$unAvion['statut']. "</td>";
+		echo "<td>".$unAeroport['idAeroport']. "</td>";
+		echo "<td>".$unAeroport['designationAeroport']. "</td>";
+		echo "<td>".$unAeroport['adresse']. "</td>";
+		echo "<td>".$unAeroport['statut']. "</td>";
 		echo "<td>";
 
 
 	
-		echo "<a href='index.php?page=2&action=sup&idAeroport=".$unAeroport['idAeroport']."'>";
+		echo "<a href='index.php?page=3&action=sup&idAeroport=".$unAeroport['idAeroport']."'>";
 		echo "<img src='images/supprimer.jpeg' height='30' width='30'>";
 		echo "</a>";
-		echo "<a href='index.php?page=2&action=edit&idAeroport=".$unAeroport['idAeroport']."'>";
+		echo "<a href='index.php?page=3&action=edit&idAeroport=".$unAeroport['idAeroport']."'>";
 		echo "<img src='images/edit.jpeg' height='30' width='30'>";
 		echo "</a>";
 

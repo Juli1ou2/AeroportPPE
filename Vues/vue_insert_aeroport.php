@@ -19,7 +19,7 @@
 			<td> Statut de l'aéroport :</td>
 			<td>
 				<input type="text" name="statut"
-				value="<?php if($leAeroport != null)  echo $leAeroport['satut'] ; ?>">
+				value="<?php if($leAeroport != null)  echo $leAeroport['statut'] ; ?>">
  
 			</td>
 		</tr>

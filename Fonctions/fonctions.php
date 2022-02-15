@@ -1,8 +1,8 @@
 <?php	
 		function connexion ()
 	{
-		$con = mysqli_connect("localhost", "root", "", "airfrance"); //Config pour WINDOWS !
-		//$con = mysqli_connect("localhost:8889", "root", "root", "airfrance"); //Config pour MACOS !
+		//$con = mysqli_connect("localhost", "root", "", "airfrance"); //Config pour WINDOWS !
+		$con = mysqli_connect("localhost:8889", "root", "root", "airfrance"); //Config pour MACOS !
 		if ($con == null){
 			echo "Erreur de connexion à la bdd";
 		}
@@ -324,7 +324,7 @@
        function selectWhereAeroport($idAeroport)
     {
 
-    	$requete = "select * from aeroport where idAeroprot=".$idAeroport
+    	$requete = "select * from aeroport where idAeroport=".$idAeroport
     	;
 		$con = connexion();
 		if ($con)
@@ -342,7 +342,7 @@
 
        function updateAeroport($tab)
 	{
-		$requete = "update aeroport set designationAeroport ='".$tab['designationAeroport']."', adresse ='".$tab['adresse']."', statut ='".$tab['statut']; 
+		$requete = "update aeroport set designationAeroport ='".$tab['designationAeroport']."', adresse ='".$tab['adresse']."', statut ='".$tab['statut']."'where idAeroport=".$tab['idAeroport']; 
 		$con = connexion ();
 		if ($con) 
 		{
