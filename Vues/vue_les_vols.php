@@ -44,10 +44,10 @@
 
 	
 		echo "<a href='index.php?page=1&action=sup&idVol=".$unVol['idVol']."'>";
-		echo "<img src='images/supprimer.jpeg' height='30' width='30'>";
+		echo "<img src='images/supprimer.png' height='30' width='30'>";
 		echo "</a>";
 		echo "<a href='index.php?page=1&action=edit&idVol=".$unVol['idVol']."'>";
-		echo "<img src='images/edit.jpeg' height='30' width='30'>";
+		echo "<img src='images/edit.png' height='30' width='30'>";
 		echo "</a>";
 
 

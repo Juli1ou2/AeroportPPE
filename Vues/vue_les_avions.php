@@ -34,10 +34,10 @@
 
 	
 		echo "<a href='index.php?page=2&action=sup&idAvion=".$unAvion['idAvion']."'>";
-		echo "<img src='images/supprimer.jpeg' height='30' width='30'>";
+		echo "<img src='images/supprimer.png' height='30' width='30'>";
 		echo "</a>";
 		echo "<a href='index.php?page=2&action=edit&idAvion=".$unAvion['idAvion']."'>";
-		echo "<img src='images/edit.jpeg' height='30' width='30'>";
+		echo "<img src='images/edit.png' height='30' width='30'>";
 		echo "</a>";
 
 

@@ -15,29 +15,31 @@
 
 	<body>
 		<center>
-			<header>		
-				<h1>Gestion Pilotes AirFrance</h1>
-					
-				<div id="menu">			
-					<a href="index.php?page=0">
-						<img src="images/home.png" height="60" width="60" title="Accueil">
-					</a>
+			<header>
+				<div id="en-tete">		
+					<h1>Gestion Pilotes AirFrance</h1>
+						
+					<div id="menu">			
+						<a href="index.php?page=0">
+							<img src="images/home.png" height="60" width="60" title="Accueil">
+						</a>
 
-					<a href="index.php?page=1">
-						<img src="images/pilote.png" height="60" width="60" title="Pilotes">
-					</a>
-					<a href="index.php?page=2">
-						<img src="images/avion.png" height="60" width="60" title="Avions">
-					</a>
-					<a href="index.php?page=3">
-						<img src="images/aeroport.png" height="60" width="60" title="Aéroports">
-					</a>
-					<a href="index.php?page=4">
-						<img src="images/vol.png" height="60" width="60" title="Vols">
-					</a>
-					<a href="index.php?page=5">
-						<img src="images/deconnexion.png" height="60" width="60" title="Se déconnecter">
-					</a>
+						<a href="index.php?page=1">
+							<img src="images/pilote.png" height="60" width="60" title="Pilotes">
+						</a>
+						<a href="index.php?page=2">
+							<img src="images/avion.png" height="60" width="60" title="Avions">
+						</a>
+						<a href="index.php?page=3">
+							<img src="images/aeroport.png" height="60" width="60" title="Aéroports">
+						</a>
+						<a href="index.php?page=4">
+							<img src="images/vol.png" height="60" width="60" title="Vols">
+						</a>
+						<a href="index.php?page=5">
+							<img src="images/deconnexion.png" height="60" width="60" title="Se déconnecter">
+						</a>
+					</div>
 				</div>
 			</header>
 
