@@ -1,16 +1,16 @@
 <h3>Accueil du site</h3>
 
 <h4>
-	<!-- <?php 
+	<?php 
 		echo "Personne connectée : ".$_SESSION['prenom']." ".$_SESSION['nom']; 
 		echo "<br/>";
 		echo "Rôle : ".$_SESSION['role'];
-	?> -->
+	?>
 </h4>
 
 <img src="images/logo.png" height="140" width="220">
 
-<p>Bienvenue sur la plateforme de gestion des pilotes AirFrance. <br>
+<p>Bienvenue sur la plateforme de gestion des pilotes AirFrance.<br>
 Veuillez vous connecter pour avoir accès à votre espace.<br/><br/><br/></p>
 
 <?php

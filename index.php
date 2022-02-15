@@ -1,5 +1,5 @@
 <?php
-	//session_start(); //demarrage de la session
+	session_start(); //demarrage de la session
 	require_once("fonctions/fonctions.php")
 
 ?>
