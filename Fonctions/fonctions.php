@@ -197,6 +197,19 @@
 		return $lesAvions;
 	}
 
+	function countAvions(){
+		$requete = "select count(*) as nb from avion ;";
+		$con = connexion();
+		if ($con){
+			$resultat = mysqli_query($con, $requete);
+			$nb = mysqli_fetch_assoc($resultat);
+		} else {
+			return null;
+		}
+		deconnexion($con);
+		return $nb["nb"];
+	}
+
 
 	/***************** Fonction Vol ****************/
 

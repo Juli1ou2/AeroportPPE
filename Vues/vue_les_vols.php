@@ -39,7 +39,7 @@
 		echo "<td>".$unVol['idAeroport2']. "</td>";
 		echo "<td>".$unVol['idPilote1']. "</td>";
 		echo "<td>".$unVol['idPilote2']. "</td>";
-		echo "<td>";
+		echo "<td><center>";
 
 
 	
@@ -52,7 +52,7 @@
 
 
 
-		echo "</td>";
+		echo "</center></td>";
 		echo "</tr>";
 	}
 

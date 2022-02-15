@@ -29,7 +29,7 @@
 		echo "<td>".$unPilote['age']. "</td>";
 		echo "<td>".$unPilote['email']. "</td>";
 		echo "<td>".$unPilote['grade']. "</td>";
-		echo "<td>";
+		echo "<td><center>";
 
 
 	
@@ -42,7 +42,7 @@
 
 
 
-		echo "</td>";
+		echo "</center></td>";
 		echo "</tr>";
 	}
 

@@ -29,7 +29,7 @@
 		echo "<td>".$unAvion['etat']. "</td>";
 		echo "<td>".$unAvion['nbPlaces']. "</td>";
 		echo "<td>".$unAvion['type']. "</td>";
-		echo "<td>";
+		echo "<td><center>";
 
 
 	
@@ -42,7 +42,7 @@
 
 
 
-		echo "</td>";
+		echo "</center></td>";
 		echo "</tr>";
 	}
 
