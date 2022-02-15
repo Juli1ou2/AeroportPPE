@@ -8,11 +8,10 @@
 </form>
 <br/>
 
-	<div class="table-responsive">
-	<table class="table">
-		<thead class="bg-dark text-light">
+	<table id="table_affichage">
+		<thead>
 			<tr>
-				<th>Id Avion</th>
+				<th>ID Avion</th>
 				<th>Modèle</th>
 				<th>État</th>
 				<th>Nombre de places</th>
