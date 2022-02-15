@@ -378,6 +378,21 @@
 		return $lesAeroports;
 	}
 
+	function countAeroports ()
+	{
+		$requete = "select count(*) as nb from aeroport ;";
+		$con = connexion();
+		if ($con)
+		{
+		$resultat = mysqli_query($con, $requete);
+		$nb = mysqli_fetch_assoc($resultat);
+		} else {
+			return null;
+		}
+		deconnexion($con);
+		return $nb["nb"];
+	}
+
 
 /***************** Fonction User ****************/
 
