@@ -1,8 +1,8 @@
 <?php	
 		function connexion ()
 	{
-		//$con = mysqli_connect("localhost", "root", "", "airfrance"); //Config pour WINDOWS !
-		$con = mysqli_connect("localhost:8889", "root", "root", "airfrance"); //Config pour MACOS !
+		$con = mysqli_connect("localhost", "root", "", "airfrance"); //Config pour WINDOWS !
+		//$con = mysqli_connect("localhost:8889", "root", "root", "airfrance"); //Config pour MACOS !
 		if ($con == null){
 			echo "Erreur de connexion à la bdd";
 		}
@@ -262,7 +262,7 @@
 
        function updateVol($tab)
 	{
-		$requete = "update vol set nom ='".$tab['nom']."', prenom ='".$tab['prenom']."', age ='".$tab['age']."', email ='".$tab['email']."', grade = '".$tab['grade']."' , mdp ='".$tab['mdp']."'where idPilote = ".$tab['idPilote']; 
+		$requete = "update vol set designationAeroport ='".$tab['designationAeroport']."', dateVol ='".$tab['dateVol']."', heureDepart ='".$tab['heureDepart']."', heureArrivee ='".$tab['heureArrivee']."', dureeVol = '".$tab['dureeVol']."' , idAvion ='".$tab['idAvion']."' , idAeroport1 ='".$tab['idAeroport1']."' , idAeroport2 ='".$tab['idAeroport2']."' , idPilote1 ='".$tab['idPilote1']."' , idPilote2 ='".$tab['idPilote2']."'where idVol = ".$tab['idVol']; 
 		$con = connexion ();
 		if ($con){
 			mysqli_query($con, $requete);
@@ -272,7 +272,7 @@
 
 	function searchVols($mot)
 	{
-		$requete = "select * from vol where nom like'%".$mot."%' or prenom like '%".$mot."%' or age like '%".$mot."%' or email like '%".$mot."%' or grade like '%".$mot."%';";
+		$requete = "select * from vol where designationAeroport like'%".$mot."%' or dateVol like '%".$mot."%' or heureDepart like '%".$mot."%' or heureArrivee like '%".$mot."%' or dureeVol like '%".$mot."%' or idAvion like '%".$mot."%' or idAeroport1 like '%".$mot."%' or idAeroport2 like '%".$mot."%' or idPilote1 like '%".$mot."%' or idPilote2 like '%".$mot."%';";
 		$con = connexion();
 		if ($con){
 			$lesVols = mysqli_query($con, $requete);

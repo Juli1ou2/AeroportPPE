@@ -28,7 +28,7 @@
 	<?php
 	foreach ($lesVols as $unVol ) {
 		echo "<tr>";
-		echo "<td>".$unVol['idPilote']. "</td>";
+		echo "<td>".$unVol['idVol']. "</td>";
 		echo "<td>".$unVol['designationVol']. "</td>";
 		echo "<td>".$unVol['dateVol']. "</td>";
 		echo "<td>".$unVol['heureDepart']. "</td>";
@@ -43,10 +43,10 @@
 
 
 	
-		echo "<a href='index.php?page=1&action=sup&idVol=".$unVol['idVol']."'>";
+		echo "<a href='index.php?page=4&action=sup&idVol=".$unVol['idVol']."'>";
 		echo "<img src='images/supprimer.png' height='30' width='30'>";
 		echo "</a>";
-		echo "<a href='index.php?page=1&action=edit&idVol=".$unVol['idVol']."'>";
+		echo "<a href='index.php?page=4&action=edit&idVol=".$unVol['idVol']."'>";
 		echo "<img src='images/edit.png' height='30' width='30'>";
 		echo "</a>";
 

@@ -4,7 +4,7 @@
 
 	$leVol = null;
 	$lesAvions = selectAllAvions();
-	//$lesAeroports = selectAllAeroports();
+	$lesAeroports = selectAllAeroports();
 	$lesPilotes = selectAllPilotes();
 
 
