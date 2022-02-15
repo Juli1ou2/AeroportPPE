@@ -16,7 +16,7 @@ Veuillez vous connecter pour avoir accès à votre espace.<br/><br/><br/></p>
 <?php
 	$nbPilotes = countPilotes();
 	$nbAvions = countAvions();
-	//$nbAeroports = countAeroports();
+	$nbAeroports = countAeroports();
 	$nbVols = countVols();
 ?>
 
@@ -25,14 +25,14 @@ Veuillez vous connecter pour avoir accès à votre espace.<br/><br/><br/></p>
 	<thead>
 		<th>Nombre de pilotes</th>
 		<th>Nombre d'avions</th>
-		<!--<th>Nombre d'aéroports</th>-->
+		<th>Nombre d'aéroports</th>
 		<th>Nombre de vols</th>
 	</thead>
 	<?php
 		echo "<tr>";
 		echo "<td>".$nbPilotes."</td>";
 		echo "<td>".$nbAvions."</td>";
-		//echo "<td>".$nbAeroports."</td>";
+		echo "<td>".$nbAeroports."</td>";
 		echo "<td>".$nbVols."</td>";
 		echo "</tr>";
 	?>

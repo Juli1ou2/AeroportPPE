@@ -75,29 +75,31 @@
 				</div>
 			</header>
 
-			<?php    
-		    	if(isset($_GET["page"])){
-		    		$page = $_GET['page'];
-		    	}else{
-		    		$page=0;
-		    	}
+			<?php
+				if (isset($_SESSION['email'])){    
+			    	if(isset($_GET["page"])){
+			    		$page = $_GET['page'];
+			    	}else{
+			    		$page=0;
+			    	}
 
-		    	switch ($page) {
-		    		case 0 : require_once('home.php');
-		    			break;
-		    		case 1 : require_once("g_pilote.php");
-		    			break;
-		    		case 2: require_once("g_avion.php");
-		    			break;
-		    		case 3 : require_once("g_aeroport.php");
-		    			break;
-		    		case 4 : require_once("g_vol.php");
-		    			break;
-		            case 5 :
-		                //suppression de la session
-						session_destroy();
-						header("Location: index.php"); //recharger la page
-						break;
+			    	switch ($page) {
+			    		case 0 : require_once('home.php');
+			    			break;
+			    		case 1 : require_once("g_pilote.php");
+			    			break;
+			    		case 2: require_once("g_avion.php");
+			    			break;
+			    		case 3 : require_once("g_aeroport.php");
+			    			break;
+			    		case 4 : require_once("g_vol.php");
+			    			break;
+			            case 5 :
+			                //suppression de la session
+							session_destroy();
+							header("Location: index.php"); //recharger la page
+							break;
+					}
 		    	}
 		 	?>
 
