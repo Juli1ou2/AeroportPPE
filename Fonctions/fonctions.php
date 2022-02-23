@@ -262,7 +262,7 @@
 
        function updateVol($tab)
 	{
-		$requete = "update vol set designationAeroport ='".$tab['designationAeroport']."', dateVol ='".$tab['dateVol']."', heureDepart ='".$tab['heureDepart']."', heureArrivee ='".$tab['heureArrivee']."', dureeVol = '".$tab['dureeVol']."' , idAvion ='".$tab['idAvion']."' , idAeroport1 ='".$tab['idAeroport1']."' , idAeroport2 ='".$tab['idAeroport2']."' , idPilote1 ='".$tab['idPilote1']."' , idPilote2 ='".$tab['idPilote2']."'where idVol = ".$tab['idVol']; 
+		$requete = "update vol set designationVol ='".$tab['designationVol']."', dateVol ='".$tab['dateVol']."', heureDepart ='".$tab['heureDepart']."', heureArrivee ='".$tab['heureArrivee']."', dureeVol = '".$tab['dureeVol']."' , idAvion ='".$tab['idAvion']."' , idAeroport1 ='".$tab['idAeroport1']."' , idAeroport2 ='".$tab['idAeroport2']."' , idPilote1 ='".$tab['idPilote1']."' , idPilote2 ='".$tab['idPilote2']."'where idVol = ".$tab['idVol']; 
 		$con = connexion ();
 		if ($con){
 			mysqli_query($con, $requete);
@@ -272,7 +272,7 @@
 
 	function searchVols($mot)
 	{
-		$requete = "select * from vol where designationAeroport like'%".$mot."%' or dateVol like '%".$mot."%' or heureDepart like '%".$mot."%' or heureArrivee like '%".$mot."%' or dureeVol like '%".$mot."%' or idAvion like '%".$mot."%' or idAeroport1 like '%".$mot."%' or idAeroport2 like '%".$mot."%' or idPilote1 like '%".$mot."%' or idPilote2 like '%".$mot."%';";
+		$requete = "select * from vol where designationVol like'%".$mot."%' or dateVol like '%".$mot."%' or heureDepart like '%".$mot."%' or heureArrivee like '%".$mot."%' or dureeVol like '%".$mot."%' or idAvion like '%".$mot."%' or idAeroport1 like '%".$mot."%' or idAeroport2 like '%".$mot."%' or idPilote1 like '%".$mot."%' or idPilote2 like '%".$mot."%';";
 		$con = connexion();
 		if ($con){
 			$lesVols = mysqli_query($con, $requete);
@@ -376,6 +376,20 @@
 		}
 		deconnexion($con);
 		return $lesAeroports;
+	}
+
+	function countAeroports ()
+	{
+		$requete = "select count(*) as nb from aeroport ;";
+		$con = connexion();
+		if ($con){
+			$resultat = mysqli_query($con, $requete);
+			$nb = mysqli_fetch_assoc($resultat);
+		} else {
+			return null;
+		}
+		deconnexion($con);
+		return $nb["nb"];
 	}
 
 

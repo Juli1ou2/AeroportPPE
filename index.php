@@ -100,6 +100,10 @@
 							header("Location: index.php"); //recharger la page
 							break;
 					}
+		    	} else {
+		    		echo '<h3>Veuillez vous connecter pour profiter des fonctionnalités du site !</h3>';
+		    		echo '<img src="images/logo.png" height="227" width="403" title="Logo AirFrance">';
+		    		echo '<br/>';
 		    	}
 		 	?>
 
