@@ -6,39 +6,38 @@
 </form>
 <br/>
 
-	<div class="table-responsive">
-	<table class="table">
-		<thead class="bg-dark text-light">
+	<table id="table_affichage">
+		<thead>
 			<tr>
-				<th>Id Aéroport</th>
+				<th>ID Aéroport</th>
 				<th>Désignation</th>
 				<th>Adresse</th>
 				<th>Statut</th>
-				
+				<th>Opérations</th>
 			</tr> 
 		</thead>
 
 	<?php
-	foreach ($lesAeroports as $unAeroport ) {
+	foreach ($lesAeroports as $unAeroport) {
 		echo "<tr>";
 		echo "<td>".$unAeroport['idAeroport']. "</td>";
 		echo "<td>".$unAeroport['designationAeroport']. "</td>";
 		echo "<td>".$unAeroport['adresse']. "</td>";
 		echo "<td>".$unAeroport['statut']. "</td>";
-		echo "<td>";
+		echo "<td><center>";
 
 
 	
 		echo "<a href='index.php?page=3&action=sup&idAeroport=".$unAeroport['idAeroport']."'>";
-		echo "<img src='images/supprimer.jpeg' height='30' width='30'>";
+		echo "<img src='images/supprimer.png' height='30' width='30'>";
 		echo "</a>";
 		echo "<a href='index.php?page=3&action=edit&idAeroport=".$unAeroport['idAeroport']."'>";
-		echo "<img src='images/edit.jpeg' height='30' width='30'>";
+		echo "<img src='images/edit.png' height='30' width='30'>";
 		echo "</a>";
 
 
 
-		echo "</td>";
+		echo "</center></td>";
 		echo "</tr>";
 	}
 
@@ -46,4 +45,3 @@
 
 
 </table>
-</div>

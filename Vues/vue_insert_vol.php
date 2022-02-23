@@ -49,11 +49,11 @@
 		</tr>
 		<tr>
 			<td>ID Aéroport Aller :</td>
-			<td><select name="idclient" value="<?php if($leVehicule!=null) echo $leVehicule['idclient'];?>">
+			<td><select name="idAeroport1" value="<?php if($leVol!=null) echo $leVol['idAeroport1'];?>">
 				<?php
-					foreach ($lesClients as $unClient) {
-						echo "<option value='".$unClient['idclient']."'>";
-						echo $unClient['nom']." ".$unClient['prenom'];
+					foreach ($lesAeroports as $unAeroport) {
+						echo "<option value='".$unAeroport['idAeroport']."'>";
+						echo $unAeroport['designationAeroport'];
 						echo "</option>";
 					}
 				?>
@@ -61,11 +61,11 @@
 		</tr>
 		<tr>
 			<td>ID Aéroport Retour :</td>
-			<td><select name="idclient" value="<?php if($leVehicule!=null) echo $leVehicule['idclient'];?>">
+			<td><select name="idAeroport2" value="<?php if($leVol!=null) echo $leVol['idAeroport2'];?>">
 				<?php
-					foreach ($lesClients as $unClient) {
-						echo "<option value='".$unClient['idclient']."'>";
-						echo $unClient['nom']." ".$unClient['prenom'];
+					foreach ($lesAeroports as $unAeroport) {
+						echo "<option value='".$unAeroport['idAeroport']."'>";
+						echo $unAeroport['designationAeroport'];
 						echo "</option>";
 					}
 				?>

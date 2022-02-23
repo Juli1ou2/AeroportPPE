@@ -48,7 +48,6 @@
 	  echo "<br/> <br/>";
    if ($lesAeroports != null)
    {
-      echo "<h2> Liste des aéroports </h2>";
       require_once ("vues/vue_les_aeroports.php");
    }
 
