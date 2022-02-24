@@ -20,13 +20,15 @@
 				<th>Aéroport retour</th>
 				<th>Pilote aller</th>
 				<th>Pilote retour</th>
-				<th>Opérations</th>
+				<?php if(isset($_SESSION['email']) and $_SESSION['role']=='admin'){
+					echo '<th>Opérations</th>';
+				} ?>
 				
 			</tr> 
 		</thead>
 
 	<?php
-	foreach ($lesVols as $unVol ) {
+	foreach ($lesVols as $unVol) {
 		echo "<tr>";
 		echo "<td>".$unVol['idVol']. "</td>";
 		echo "<td>".$unVol['designationVol']. "</td>";
@@ -39,20 +41,20 @@
 		echo "<td>".$unVol['idAeroport2']. "</td>";
 		echo "<td>".$unVol['idPilote1']. "</td>";
 		echo "<td>".$unVol['idPilote2']. "</td>";
-		echo "<td><center>";
 
+		if(isset($_SESSION['email']) and $_SESSION['role']=='admin'){
+			echo "<td><center>";
+		
+			echo "<a href='index.php?page=4&action=sup&idVol=".$unVol['idVol']."'>";
+			echo "<img src='images/supprimer.png' height='30' width='30'>";
+			echo "</a>";
+			echo "<a href='index.php?page=4&action=edit&idVol=".$unVol['idVol']."'>";
+			echo "<img src='images/edit.png' height='30' width='30'>";
+			echo "</a>";
 
-	
-		echo "<a href='index.php?page=4&action=sup&idVol=".$unVol['idVol']."'>";
-		echo "<img src='images/supprimer.png' height='30' width='30'>";
-		echo "</a>";
-		echo "<a href='index.php?page=4&action=edit&idVol=".$unVol['idVol']."'>";
-		echo "<img src='images/edit.png' height='30' width='30'>";
-		echo "</a>";
+			echo "</center></td>";
+		}
 
-
-
-		echo "</center></td>";
 		echo "</tr>";
 	}
 

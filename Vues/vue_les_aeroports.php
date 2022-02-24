@@ -13,7 +13,9 @@
 				<th>Désignation</th>
 				<th>Adresse</th>
 				<th>Statut</th>
-				<th>Opérations</th>
+				<?php if(isset($_SESSION['email']) and $_SESSION['role']=='admin'){
+					echo '<th>Opérations</th>';
+				} ?>
 			</tr> 
 		</thead>
 
@@ -24,20 +26,20 @@
 		echo "<td>".$unAeroport['designationAeroport']. "</td>";
 		echo "<td>".$unAeroport['adresse']. "</td>";
 		echo "<td>".$unAeroport['statut']. "</td>";
-		echo "<td><center>";
 
+		if(isset($_SESSION['email']) and $_SESSION['role']=='admin'){
+			echo "<td><center>";
 
-	
-		echo "<a href='index.php?page=3&action=sup&idAeroport=".$unAeroport['idAeroport']."'>";
-		echo "<img src='images/supprimer.png' height='30' width='30'>";
-		echo "</a>";
-		echo "<a href='index.php?page=3&action=edit&idAeroport=".$unAeroport['idAeroport']."'>";
-		echo "<img src='images/edit.png' height='30' width='30'>";
-		echo "</a>";
+			echo "<a href='index.php?page=3&action=sup&idAeroport=".$unAeroport['idAeroport']."'>";
+			echo "<img src='images/supprimer.png' height='30' width='30'>";
+			echo "</a>";
+			echo "<a href='index.php?page=3&action=edit&idAeroport=".$unAeroport['idAeroport']."'>";
+			echo "<img src='images/edit.png' height='30' width='30'>";
+			echo "</a>";
 
-
-
-		echo "</center></td>";
+			echo "</center></td>";
+		}
+		
 		echo "</tr>";
 	}
 

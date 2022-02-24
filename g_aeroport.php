@@ -5,32 +5,33 @@
 
 	$leAeroport= null;
 
-
+	if(isset($_SESSION['email']) and $_SESSION['role']=='admin'){
 		if (isset($_GET['action']) && isset($_GET['idAeroport']))
-	{
-		$action = $_GET['action'];
-		$idAeroport = $_GET['idAeroport'];
-		switch ($action) 
 		{
-			case 'sup' : deleteAeroport($idAeroport);
+			$action = $_GET['action'];
+			$idAeroport = $_GET['idAeroport'];
+			switch ($action) 
+			{
+				case 'sup' : deleteAeroport($idAeroport);
 
-				break;
+					break;
 
-			case 'edit': $leAeroport = selectWhereAeroport($idAeroport) ; 
-				break;
+				case 'edit': $leAeroport = selectWhereAeroport($idAeroport) ; 
+					break;
+			}
 		}
-	}
 
-	require_once("vues/vue_insert_aeroport.php");
-	if (isset($_POST['Modifier']))
-	{
-		updateAeroport($_POST);
-		header("Location: index.php?page=3");
-	}
-	if (isset($_POST['Valider']))
-	{
-		
-		insertAeroport($_POST);
+		require_once("vues/vue_insert_aeroport.php");
+		if (isset($_POST['Modifier']))
+		{
+			updateAeroport($_POST);
+			header("Location: index.php?page=3");
+		}
+		if (isset($_POST['Valider']))
+		{
+			
+			insertAeroport($_POST);
+		}
 	}
 
 
