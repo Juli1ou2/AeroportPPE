@@ -15,7 +15,9 @@
 				<th>Age</th>
 				<th>Email</th>
 				<th>Grade</th>
-				<th>Opérations</th>
+				<?php if(isset($_SESSION['email']) and $_SESSION['role']=='admin'){
+					echo '<th>Opérations</th>';
+				} ?>
 				
 			</tr> 
 		</thead>
@@ -29,20 +31,22 @@
 		echo "<td>".$unPilote['age']. "</td>";
 		echo "<td>".$unPilote['email']. "</td>";
 		echo "<td>".$unPilote['grade']. "</td>";
-		echo "<td><center>";
+		if(isset($_SESSION['email']) and $_SESSION['role']=='admin'){
+			echo "<td><center>";
 
 
-	
-		echo "<a href='index.php?page=1&action=sup&idPilote=".$unPilote['idPilote']."'>";
-		echo "<img src='images/supprimer.png' height='30' width='30'>";
-		echo "</a>";
-		echo "<a href='index.php?page=1&action=edit&idPilote=".$unPilote['idPilote']."'>";
-		echo "<img src='images/edit.png' height='30' width='30'>";
-		echo "</a>";
+		
+			echo "<a href='index.php?page=1&action=sup&idPilote=".$unPilote['idPilote']."'>";
+			echo "<img src='images/supprimer.png' height='30' width='30'>";
+			echo "</a>";
+			echo "<a href='index.php?page=1&action=edit&idPilote=".$unPilote['idPilote']."'>";
+			echo "<img src='images/edit.png' height='30' width='30'>";
+			echo "</a>";
 
 
 
-		echo "</center></td>";
+			echo "</center></td>";
+		}
 		echo "</tr>";
 	}
 

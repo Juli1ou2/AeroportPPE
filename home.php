@@ -10,8 +10,7 @@
 
 <img src="images/logo.png" height="140" width="220">
 
-<p>Bienvenue sur la plateforme de gestion des pilotes AirFrance.<br>
-Veuillez vous connecter pour avoir accès à votre espace.<br/><br/><br/></p>
+<p>Bienvenue sur la plateforme de gestion des pilotes AirFrance.<br/><br/><br/></p>
 
 <?php
 	$nbPilotes = countPilotes();
